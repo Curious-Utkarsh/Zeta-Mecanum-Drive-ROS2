@@ -1,0 +1,246 @@
+<?xml version="1.0" ?>
+<robot name="zeta" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+  <xacro:arg name="is_ignition" default="true"/>
+  <xacro:arg name="is_sim" default="true"/>
+
+  <link name="base_footprint" />
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="2.6242213294725585e-17 -2.256459952565477e-17 0.016499999999999983" rpy="0 0 0"/>
+      <mass value="1.743512867727987"/>
+      <inertia ixx="0.009262" iyy="0.011957" izz="0.021216" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://zeta_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="purple"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://zeta_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="base_footprint_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+  </joint>
+
+
+  <link name="right_wheel_front">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.2063738184473554"/>
+      <inertia ixx="0.00143" iyy="0.002082" izz="0.00143" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.175 -0.170 -0.053" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://zeta_description/meshes/wheel_front_right.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="cream"/>
+    </visual>
+    <collision>
+      <origin xyz="0.175 -0.170 -0.053" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://zeta_description/meshes/wheel_front_right.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="right_wheel_front_joint" type="continuous">
+    <origin xyz="-0.175 0.170 0.053" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="right_wheel_front"/>
+    <axis xyz="-0.0 1.0 0.0"/>
+  </joint>
+
+
+  <link name="left_wheel_front">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.2063738184473554"/>
+      <inertia ixx="0.00143" iyy="0.002082" izz="0.00143" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.175 0.170 -0.053" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://zeta_description/meshes/wheel_front_left.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="cream"/>
+    </visual>
+    <collision>
+      <origin xyz="0.175 0.170 -0.053" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://zeta_description/meshes/wheel_front_left.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="left_wheel_front_joint" type="continuous">
+    <origin xyz="-0.175 -0.170 0.053" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="left_wheel_front"/>
+    <axis xyz="-0.0 1.0 0.0"/>
+  </joint>
+
+
+  <link name="right_wheel_back">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.2063738184473554"/>
+      <inertia ixx="0.00143" iyy="0.002082" izz="0.00143" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.175 -0.170 -0.053" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://zeta_description/meshes/wheel_back_right.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="cream"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.175 -0.170 -0.053" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://zeta_description/meshes/wheel_back_right.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="right_wheel_back_joint" type="continuous">
+    <origin xyz="0.175 0.170 0.053" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="right_wheel_back"/>
+    <axis xyz="-0.0 1.0 0.0"/>
+  </joint>
+
+
+  <link name="left_wheel_back">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.2063738184473554"/>
+      <inertia ixx="0.00143" iyy="0.002082" izz="0.00143" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.175 0.170 -0.053" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://zeta_description/meshes/wheel_back_left.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="cream"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.175 0.170 -0.053" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://zeta_description/meshes/wheel_back_left.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="left_wheel_back_joint" type="continuous">
+    <origin xyz="0.175 -0.170 0.053" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="left_wheel_back"/>
+    <axis xyz="-0.0 1.0 0.0"/>
+  </joint>
+
+
+
+  <link name="imu_link">
+    <inertial>
+      <origin xyz="0.0 0.0 -0.033" rpy="0 0 0"/>
+      <mass value="0.011338921279200002"/>
+      <inertia ixx="1e-06" iyy="1e-06" izz="2e-06" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 -0.033" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://zeta_description/meshes/imu.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="cream"/>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 -0.033" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://zeta_description/meshes/imu.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="base_imu_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.1" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+  </joint>
+
+
+  <link name="camera_link">
+    <inertial>
+     <origin xyz="-0.13 0.0 -0.1" rpy="0 0 0"/>
+      <mass value="0.29820209775649525"/>
+      <inertia ixx="0.000242" iyy="2.3e-05" izz="0.000242" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.13 0.0 -0.1" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://zeta_description/meshes/camera.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="cream"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.13 0.0 -0.1" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://zeta_description/meshes/camera.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="base_camera_joint" type="fixed">
+    <origin xyz="0.25 0.0 0.1" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+  </joint>
+
+    <link name="camera_link_optical" />
+
+    <joint name="camera_optical_joint" type="fixed">
+        <parent link="camera_link"/>
+        <child link="camera_link_optical"/>
+        <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+    </joint>
+
+
+  <link name="lidar_link">
+    <inertial>
+      <origin xyz="0.0 0.0 -0.125" rpy="0 0 0"/>
+      <mass value="0.5574542584878225"/>
+      <inertia ixx="0.000238" iyy="0.000472" izz="0.000552" ixy="-5e-06" iyz="-2e-06" ixz="-4.7e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 -0.125" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://zeta_description/meshes/lidar.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="cream"/>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 -0.125" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://zeta_description/meshes/lidar.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="base_lidar_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.14" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+  </joint> 
+
+</robot>
