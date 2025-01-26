@@ -16,6 +16,15 @@ find_package(hardware_interface REQUIRED)
 find_package(pluginlib REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
 find_package(PkgConfig)
+find_package(geometry_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(Eigen3 REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(tf2 REQUIRED)
+
+include_directories(include)
+include_directories(${EIGEN3_INCLUDE_DIR})
 
 ament_python_install_package(${PROJECT_NAME})
 
@@ -26,6 +35,7 @@ install(
 
 install(PROGRAMS
   ${PROJECT_NAME}/twist_relay_node.py
+  ${PROJECT_NAME}/mecanum_controller.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

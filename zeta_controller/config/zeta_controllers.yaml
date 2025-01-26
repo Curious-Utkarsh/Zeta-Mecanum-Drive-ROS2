@@ -6,10 +6,10 @@ controller_manager:
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-    simple_velocity_controller:
+    mecanum_controller:
       type: velocity_controllers/JointGroupVelocityController
 
-simple_velocity_controller:
+mecanum_controller:
   ros__parameters:
     joints:
       - left_wheel_front_joint
