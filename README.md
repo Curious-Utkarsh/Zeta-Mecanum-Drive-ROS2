@@ -25,7 +25,7 @@ Early prototype (Jan 2025): model, controller and teleop are in place; navigatio
 
 ## Related
 
-[RF holonomic drive](https://github.com/Curious-Utkarsh/RF_Holonomic_Drive) — an earlier hardware mecanum robot · [Aura](https://github.com/Curious-Utkarsh/ROS2_Mobile_Manipulator_Gazebo) — built in the same month with the same package layout
+[RF holonomic drive](https://github.com/Curious-Utkarsh/rf-mecanum-drive-robot) — an earlier hardware mecanum robot · [Aura](https://github.com/Curious-Utkarsh/aura-mobile-manipulator) — built in the same month with the same package layout
 
 ---
 [Kumar Utkarsh](https://github.com/Curious-Utkarsh) · [LinkedIn](https://www.linkedin.com/in/kumar-utkarsh-124aab227/)
